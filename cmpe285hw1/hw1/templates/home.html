@@ -1,0 +1,31 @@
+{% block content %}
+
+<h1>HW: Python Stock Profit Calculator - Individual Homework</h1>
+Course: Software Engineering Processes - CMPE 285. Fall, 2019. Professor Richard Sinn.<br>
+Student Name: Jacky Zhihong Chen<br>
+SJSU ID: 009941451<br>
+
+<form action="compute">
+    <h3>Compute Your Profit:</h3>
+    Ticker Symbol: <input type="text" name="tickerSymbol" placeholder="ABDE" required><br>
+    Allotment: <input type="number" name="allotment" placeholder="100" required><br>
+    Final Share Price: <input type="number" name="finalSharePrice" placeholder="110" required><br>
+    Sell Commission: <input type="number" name="sellCommission" placeholder="15" required><br>
+    Initial Share Price: <input type="number" name="initialSharePrice" placeholder="25" required><br>
+    Buy Commission: <input type="number" name="buyCommission" placeholder="10" required><br>
+    Capital Gain Tax Rate (%) <input type="number" name="capitalGainTaxRate" placeholder="15" required><br>
+    <input type="submit">
+</form>
+
+<h3>Profit Report:</h3>
+<p>Proceeds: ${{proceeds}}<br></p>
+<p>Cost: ${{cost}}<br></p>
+<p>Total Purchase Price: ${{totalPurchasePrice}} <br></p>
+<p>Buy Commission: ${{buyCommission}}<br></p>
+<p>Sell Commission: ${{sellCommission}} <br></p>
+<p>Tax on Capital Gain: ${{taxOnCapitalGain}} <br></p>
+<p>Net Profit: ${{netProfit}}<br></p>
+<p>Return on Investment: {{returnOnInvestment}}%<br></p>
+<p>To break even, you should have a final share price of: ${{finalSharePrice}} <br></p>
+
+{% endblock %}
