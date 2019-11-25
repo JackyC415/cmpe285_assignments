@@ -1,7 +1,6 @@
-import requests
+import requests, datetime
 from django.shortcuts import render
 from django.http import HttpResponse
-from datetime import date, timedelta
 
 def home(request):
     return render(request, 'home.html')
@@ -44,7 +43,7 @@ def fetch_stock(request):
             percentageChange = "(+" + str(round(percentageChange,3)) + "%)"
 
     return render(request, "home.html", {
-        "stock_date": date.today(), 
+        "stock_date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "stock_name": get_symbol(stock_symbol.upper()),
         "closingStockPriceToday": str(round(float(closingStockPriceToday),2)),
         "valuesChange": valuesChange,
